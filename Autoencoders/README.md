@@ -23,7 +23,7 @@ this part of the network tries to reconstruct the input using only the encoding 
 
 There are variety of autoencoders, such as the convolutional autoencoder, denoising autoencoder, variational autoencoder and sparse autoencoder.
 
-### Convolutional autoencoder
+### 1) Convolutional autoencoder
 
 Since your input data consists of images, it is a good idea to use a convolutional autoencoder. It is not an autoencoder variant, but rather a traditional autoencoder stacked with convolution layers: you basically replace fully connected layers by convolutional layers. Convolution layers along with max-pooling layers, convert the input from wide (a 28 x 28 image) and thin (a single channel or gray scale) to small (7 x 7 image at the latent space) and thick (128 channels).
 
@@ -34,3 +34,12 @@ Since your input data consists of images, it is a good idea to use a convolution
 ![encoded](https://user-images.githubusercontent.com/50628520/89710971-0f703880-d9a7-11ea-8aee-fa16f7e75362.jpg)
 
 ![generated](https://user-images.githubusercontent.com/50628520/89710988-1f881800-d9a7-11ea-97cf-654fdaf4df9d.jpg)
+
+
+### 2) Denoising autoencoder
+A denoising autoencoder tries to learn a representation (latent-space or bottleneck) that is robust to noise.
+You add noise to an image and then feed the noisy image as an input to the enooder part of your network. The encoder part of the autoencoder transforms the image into a different space that tries to preserve the alphabets but removes the noise.
+
+During training, you define a loss function, similar to the root mean squared error that you had defined earlier in convolutional autoencoder. At every iteration of the training, the network will compute a loss between the noisy image outputted by the decoder and the ground truth (denoisy image) and will also try to minimize that loss or difference between the reconstructed image and the original noise-free image. In other words, the network will learn a 7 x 7 x 128 space that will be noise free encodings of the data that you will train your network on!
+
+
