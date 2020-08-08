@@ -26,3 +26,11 @@ There are variety of autoencoders, such as the convolutional autoencoder, denois
 ### Convolutional autoencoder
 
 Since your input data consists of images, it is a good idea to use a convolutional autoencoder. It is not an autoencoder variant, but rather a traditional autoencoder stacked with convolution layers: you basically replace fully connected layers by convolutional layers. Convolution layers along with max-pooling layers, convert the input from wide (a 28 x 28 image) and thin (a single channel or gray scale) to small (7 x 7 image at the latent space) and thick (128 channels).
+
+### Predictions of Convolutional autoencoder on nomnist dataset
+
+![inputs](https://user-images.githubusercontent.com/50628520/89710941-e3ed4e00-d9a6-11ea-82da-3e7c881a7c11.jpg)
+
+![encoded](https://user-images.githubusercontent.com/50628520/89710971-0f703880-d9a7-11ea-8aee-fa16f7e75362.jpg)
+
+![generated](https://user-images.githubusercontent.com/50628520/89710988-1f881800-d9a7-11ea-97cf-654fdaf4df9d.jpg)
