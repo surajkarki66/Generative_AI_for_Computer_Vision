@@ -35,11 +35,19 @@ Since your input data consists of images, it is a good idea to use a convolution
 
 ![generated](https://user-images.githubusercontent.com/50628520/89710988-1f881800-d9a7-11ea-97cf-654fdaf4df9d.jpg)
 
-
 ### 2) Denoising autoencoder
+
 A denoising autoencoder tries to learn a representation (latent-space or bottleneck) that is robust to noise.
 You add noise to an image and then feed the noisy image as an input to the enooder part of your network. The encoder part of the autoencoder transforms the image into a different space that tries to preserve the alphabets but removes the noise.
 
 During training, you define a loss function, similar to the root mean squared error that you had defined earlier in convolutional autoencoder. At every iteration of the training, the network will compute a loss between the noisy image outputted by the decoder and the ground truth (denoisy image) and will also try to minimize that loss or difference between the reconstructed image and the original noise-free image. In other words, the network will learn a 7 x 7 x 128 space that will be noise free encodings of the data that you will train your network on!
 
+### Predictions of Denoising autoencoder on nomnist dataset
 
+![inputs](https://user-images.githubusercontent.com/50628520/89713572-4ac73300-d9b8-11ea-97a4-5aa8eeffcfa7.jpg)
+
+![noise](https://user-images.githubusercontent.com/50628520/89713596-6df1e280-d9b8-11ea-8717-9f052939c6d9.jpg)
+
+![encoded2](https://user-images.githubusercontent.com/50628520/89713603-7ba76800-d9b8-11ea-9325-202123066b42.jpg)
+
+![output2](https://user-images.githubusercontent.com/50628520/89713616-88c45700-d9b8-11ea-8bc8-ca7f3697cfbe.jpg)
