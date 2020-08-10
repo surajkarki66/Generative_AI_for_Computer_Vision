@@ -51,3 +51,30 @@ During training, you define a loss function, similar to the root mean squared er
 ![encoded2](https://user-images.githubusercontent.com/50628520/89713603-7ba76800-d9b8-11ea-9325-202123066b42.jpg)
 
 ![output2](https://user-images.githubusercontent.com/50628520/89713616-88c45700-d9b8-11ea-8bc8-ca7f3697cfbe.jpg)
+
+### 3) Variational Autoencoder:
+
+Variational Autoencoders (VAEs) have one fundamentally unique property that separates them from vanilla autoencoders, and it is this property that makes them so useful for generative modeling: their latent spaces are, by design, continuous, allowing easy random sampling and interpolation.
+
+VAEs have a continuous latent space by default which makes them super powerfull in generating new images.
+It achieves this by doing something that seems rather surprising at first: making its encoder not output an encoding vector of size n, rather, outputting two vectors of size n: a vector of means, μ, and another vector of standard deviations, σ.
+
+![1_CiVcrrPmpcB1YGMkTF7hzA](https://user-images.githubusercontent.com/50628520/89776971-9699e980-db2a-11ea-85e9-3e7bcf1fd960.png)
+
+They form the parameters of a vector of random variables of length n, with the i th element of μ and σ being the mean and standard deviation of the i th random variable, X i, from which we sample, to obtain the sampled encoding which we pass onward to the decoder:
+
+![1_3stEqn8fWIYeeBShlkWAYA](https://user-images.githubusercontent.com/50628520/89777078-c21cd400-db2a-11ea-85d0-c13688b78d4d.png)
+
+This stochastic generation means, that even for the same input, while the mean and standard deviations remain the same, the actual encoding will somewhat vary on every single pass simply due to sampling.
+
+What we ideally want are encodings, all of which are as close as possible to each other while still being distinct, allowing smooth interpolation, and enabling the construction of new samples.
+
+In order to force this, we introduce the Kullback–Leibler divergence (KL divergence[2]) into the loss function. The KL divergence between two probability distributions simply measures how much they diverge from each other. Minimizing the KL divergence here means optimizing the probability distribution parameters (μ and σ) to closely resemble that of the target distribution.
+
+![1_uEAxCmyVKxzZOJG6afkCCg](https://user-images.githubusercontent.com/50628520/89777319-2d66a600-db2b-11ea-86d3-4e77752cf8b3.png)
+
+#### Vector Arithmetic
+
+What about generating specific features, such as generating glasses on a face? Find two samples, one with glasses, one without, obtain their encoded vectors from the encoder, and save the difference. Add this new “glasses” vector to any other face image, and decode it.
+
+![1_El2DhlTK5duHyVxVbdqk9Q](https://user-images.githubusercontent.com/50628520/89777516-99e1a500-db2b-11ea-9829-db9d20cd2c42.png)
