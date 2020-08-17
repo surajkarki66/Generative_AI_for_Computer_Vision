@@ -42,6 +42,9 @@ In practice, works well:
 - Label Smoothing, i.e. if you have two target labels: Real=1 and Fake=0, then for each incoming sample, if it is real, then replace the label with a random number between 0.7 and 1.2, and if it is a fake sample, replace it with 0.0 and 0.3 (for example).
   - Salimans et. al. 2016
 - make the labels the noisy for the discriminator: occasionally flip the labels when training the discriminator
+`fake_labels = tf.random.uniform(shape=[25, 1], minval=0, maxval=0.3, dtype=tf.float32)
+ real_labels = tf.random.uniform(shape=[25, 1], minval=0.7, maxval=1.2, dtype=tf.float32)
+`
 
 ### 7) Use stability tricks from RL
 
