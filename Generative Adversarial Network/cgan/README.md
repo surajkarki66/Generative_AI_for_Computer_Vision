@@ -68,3 +68,8 @@ The loss function of the `Generator` minimizes the correct prediction of the `Di
 #### Generator training flow
 
 ![0_YiI0loO_1jnrLNkL](https://user-images.githubusercontent.com/50628520/90501995-edc43d80-e16c-11ea-997d-f0cebf92799b.jpg)
+
+#### mnist generation using cgan
+
+![cgan_mnist](https://user-images.githubusercontent.com/50628520/90631474-8b3d7100-e242-11ea-9f7b-82f59aefed96.gif)
+
