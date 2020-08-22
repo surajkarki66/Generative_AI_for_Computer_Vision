@@ -50,3 +50,11 @@ The researcher design a discriminator architecture which they term a PatchGAN–
 age is real or fake. We run this discriminator convolutionally across the image, averaging all responses to provide the ultimate output of D.
 
 PatchGAN can be understood as a form of texture/style loss.
+
+#### Generator Training:
+
+![gen](https://user-images.githubusercontent.com/50628520/90960812-02356c80-e4c4-11ea-9f75-b284c0ab6d1e.png)
+
+#### Discriminator Training:
+
+![dis](https://user-images.githubusercontent.com/50628520/90960850-4294ea80-e4c4-11ea-944a-c62a2a97c3e8.png)
