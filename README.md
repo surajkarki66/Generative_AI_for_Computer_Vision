@@ -9,7 +9,7 @@ Generative AI has gained significant attention recently due to its ability to cr
 ## Techniques
 Some of the AI techniques for generating images are given below:
 #### 1. Autoencoder
-#### 2. Variational Autoencoderr
+#### 2. Variational Autoencoder
 #### 3. DeepDream
 #### 4. Neural Style Transfer
 #### 5. Generative Adversarial Neural Network
