@@ -15,6 +15,7 @@ Some of the AI techniques for generating images are given below:
 #### 5. Generative Adversarial Neural Network
 #### 6. Stable Diffusion
 #### 7. Large Vision Models
+#### 8. Many More
 
 ## Contact
 For questions, suggestions, or collaborations, feel free to reach out to the repository owner [suraj.karki500@gmail.com](mailto:suraj.karki500@gmail.com)
