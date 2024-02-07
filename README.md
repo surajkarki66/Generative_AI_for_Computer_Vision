@@ -1,5 +1,4 @@
 # Generative_AI_for_Computer_Vision
----
 
 ## Overview
 Welcome to the repository dedicated to exploring Generative Artificial Intelligence (AI) techniques in Computer Vision. This repository serves as a centralized hub for various projects, research, and resources related to generating visual content using AI models.
